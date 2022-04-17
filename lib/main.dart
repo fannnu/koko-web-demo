@@ -56,87 +56,104 @@ class _MyHomePageState extends State<MyHomePage> {
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(
-                            w * 0.03, w * 0.07, w * 0.01, w * 0.01),
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Container(
-                            height: h * 0.4,
-                            width: w * 0.4,
-                            child: Text(
-                              'Get cosmetics in                30 mins',
-                              style: GoogleFonts.poppins(
-                                  textStyle: TextStyle(
-                                fontSize: w * 0.04,
-                                color: Colors.black, //Colors.yellow[800],
-                                fontWeight: FontWeight.w500,
-                              )),
+                  SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(
+                              w * 0.03, w * 0.07, w * 0.01, w * 0.01),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Container(
+                              height: h * 0.4,
+                              width: w * 0.4,
+                              child: Text(
+                                'Get cosmetics in                30 mins',
+                                style: GoogleFonts.poppins(
+                                    textStyle: TextStyle(
+                                  fontSize: w * 0.04,
+                                  color: Colors.black, //Colors.yellow[800],
+                                  fontWeight: FontWeight.w500,
+                                )),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(
-                            w * 0.01, w * 0.01, w * 0.05, w * 0.05),
-                        child: GestureDetector(
-                          onTap: _launchURL,
-                          child: Container(
-                            height: h * 0.2,
-                            width: w * 0.4,
-                            child: Image.asset("playstore.png"),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(
+                              w * 0.01, w * 0.01, w * 0.05, w * 0.05),
+                          child: GestureDetector(
+                            onTap: _launchURL,
+                            child: Container(
+                              height: h * 0.2,
+                              width: w * 0.4,
+                              child: Image.network(
+                                  "https://cdn-images-1.medium.com/max/1000/1*HxKmdivEjZuHGCONLaLEHQ.png"),
+                              //child: Image.asset("playstore.png"),
+                            ),
                           ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   ),
                   Container(
                     height: h * 0.7,
                     width: w * 0.5,
-                    child: Image.asset("koko_ss.png"),
+                    child: Image.network(
+                        "https://cdn-images-1.medium.com/max/1000/1*Q1OZWmtNOsk9-KTg_bLzng.png"),
+                    //child: Image.asset("koko_ss.png"),
                   )
                 ],
               )
             ////Phone screen
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(
-                        w * 0.05, w * 0.1, w * 0.05, w * 0.0),
-                    child: Center(
-                      child: Container(
-                        height: h * 0.1,
-                        width: w * 1,
-                        child: Text(
-                          '     Get cosmetics in 30 mins',
-                          style: GoogleFonts.poppins(
-                              textStyle: TextStyle(
-                            fontSize: w * 0.065,
-                            color: Colors.black, //Colors.yellow[800],
-                            fontWeight: FontWeight.w700,
-                          )),
+            : SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(
+                          w * 0.05, w * 0.1, w * 0.05, w * 0.0),
+                      child: Center(
+                        child: Container(
+                          height: h * 0.1,
+                          width: w * 1,
+                          child: Text(
+                            '     Get cosmetics in 30 mins',
+                            style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                              fontSize: w * 0.065,
+                              color: Colors.black, //Colors.yellow[800],
+                              fontWeight: FontWeight.w700,
+                            )),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Container(
-                    height: h * 0.6,
-                    width: w * 1,
-                    child: Image.asset("koko_ss.png"),
-                  ),
-                  GestureDetector(
-                    onTap: _launchURL,
-                    child: Container(
-                      height: h * 0.15,
+                    Container(
+                      height: h * 0.6,
                       width: w * 1,
-                      child: Image.asset("playstore.png"),
+                      child: Image.network(
+                          "https://cdn-images-1.medium.com/max/1000/1*Q1OZWmtNOsk9-KTg_bLzng.png"),
+
+                      //child: Image.asset("koko_ss.png"),
                     ),
-                  ),
-                ],
+                    GestureDetector(
+                      onTap: _launchURL,
+                      child: Container(
+                        height: h * 0.15,
+                        width: w * 1,
+                        child: Image.network(
+                            "https://cdn-images-1.medium.com/max/1000/1*HxKmdivEjZuHGCONLaLEHQ.png"),
+
+                        //child: Image.asset("playstore.png"),
+                      ),
+                    ),
+                    SizedBox(
+                      height: h * 0.05,
+                    )
+                  ],
+                ),
               )
         // This trailing comma makes auto-formatting nicer for build methods.
         );
